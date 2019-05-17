@@ -49,7 +49,7 @@ public class RegServlet extends HttpServlet {
        byte[] digiest = messageDigest.digest();
        String hashedPassword = DatatypeConverter.printHexBinary(digiest);
 
-        User register  = new User(name,hashedPassword,role);
+        User register  = new User(name,hashedPassword.toLowerCase(),role);
         
         if (uService.login(register)) {
             out.print("User name exists!");
