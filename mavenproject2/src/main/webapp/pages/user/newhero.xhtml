@@ -20,7 +20,27 @@
         </h:form>  
         
         <!--Ezután ki kéne írni a létező ásványkincseit-->
-         
+        <ui:repeat value="#{userUtils.userEmpires}" var="item" rendered="true" varStatus="empire">
+            <h:outputText value="#{empire.name}" />: <h:outputText value="#{empire.description}"/>
+            <br></br>
+            <ui:repeat value="#{item.resources}" var="res" rendered="true" varStatus="resources">
+                <h:outputText value="#{resources.name}" />: <h:outputText value="#{resources.count}"/>
+                <br></br>
+            </ui:repeat>  
+            <hr></hr>
+        </ui:repeat>    
+        
+        <h:outputText value="#{userUtils.getEmpiresResources()}"></h:outputText>
+        
+        <h:form id="user-form">  
+            <h:outputLabel for="empireName">Épület név</h:outputLabel>  
+            <h:inputText id="heroName" value="#{userUtils.newHero.name}" required="true" requiredMessage="Empirename is required"/><br/>  
+
+            <h:outputLabel for="empireDescription">Épület leírás</h:outputLabel>  
+            <h:inputText id="empireDescription" value="#{userUtils.newHero.description}" required="true" requiredMessage="Username is required"/><br/>  
+            
+            <h:commandButton id="submit-button" value="Submit" actionListener="#{userUtils.addNewEmpire()}"/>  
+        </h:form>  
     </h:body>
 </html>
 
