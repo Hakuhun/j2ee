@@ -31,6 +31,8 @@ public class AdminUtils {
     MineralResource newResource;
     
     public AdminUtils() {
+        newBuilding = new Building();
+        newResource = new MineralResource();
         System.out.println("Admin oldal betöltve");
     }
     
