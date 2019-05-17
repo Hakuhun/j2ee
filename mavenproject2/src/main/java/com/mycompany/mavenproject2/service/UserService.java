@@ -61,7 +61,7 @@ public class UserService {
         return this.uRepo.modify    (user); 
     }
     
-    public User gerByName(String name){
+    public User getByName(String name){
         return uRepo.getByName(name);
     }
     

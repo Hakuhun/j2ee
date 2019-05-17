@@ -7,6 +7,7 @@ package com.mycompany.mavenproject2.service;
 
 import com.mycompany.mavenproject2.model.MineralResource;
 import com.mycompany.mavenproject2.repository.MineralResourceRepository;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -15,7 +16,7 @@ public class MineralResourceService {
     @Inject
     private MineralResourceRepository mrRepo;
 
-    public Iterable<MineralResource> getAll() {
+    public List<MineralResource> getAll() {
         return mrRepo.getAll();
     }
 

@@ -1,55 +1,74 @@
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-
-  <display-name>DemoWeb</display-name>
-
-  <welcome-file-list>
-    <welcome-file>/login.jsp</welcome-file>
-  </welcome-file-list>
-
-  
-
-	<!--Defining security constraint for type of roles available--> 
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>administrator</web-resource-name>
-      <url-pattern>/pages/admin/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>ADMINISTRATOR</role-name>
-    </auth-constraint>
-  </security-constraint>
-  
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>user</web-resource-name>
-      <url-pattern>/pages/user/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>ADMINISTRATOR</role-name>
-      <role-name>USER</role-name>
-    </auth-constraint>
-  </security-constraint>
-	<!--Defining security constraint for type of roles available--> 
-
-	<!--Defining type of authenitcation mechanism-->  
-  <login-config>
-    <auth-method>FORM</auth-method>
-    <realm-name>hoe</realm-name>
-    <form-login-config>
-    	<form-login-page>/login.jsp</form-login-page>
-    	<form-error-page>/error.jsp</form-error-page>
-    </form-login-config>
-  </login-config>
-	<!--Defining type of authenitcation mechanism-->
-
-  <!--Denining security role-->
-  <security-role>
-    <role-name>ADMINISTRATOR</role-name>
-  </security-role> 
-
-  <security-role>
-    <role-name>USER</role-name>
-  </security-role> 
-  <!--Denining security role-->
-
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>DemoWeb</display-name>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>NewHeroBean</servlet-name>
+      <url-pattern>*.xhtml</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+       <servlet-name>AdminUtils</servlet-name>
+        <url-pattern>pages/admin/admin.xhtml</url-pattern>
+   </servlet-mapping>
+    
+    <!--Defining security constraint for type of roles available-->
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+        <welcome-file>/login.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>administrator</web-resource-name>
+            <url-pattern>/pages/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMINISTRATOR</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>user</web-resource-name>
+            <url-pattern>/pages/user/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMINISTRATOR</role-name>
+            <role-name>USER</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <!--Defining security constraint for type of roles available-->
+    <!--Defining type of authenitcation mechanism-->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>hoe</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <!--Defining type of authenitcation mechanism-->
+    <!--Denining security role-->
+    <security-role>
+        <role-name>ADMINISTRATOR</role-name>
+    </security-role>
+    <security-role>
+        <role-name>USER</role-name>
+    </security-role>
+    <!--Denining security role-->
 </web-app>

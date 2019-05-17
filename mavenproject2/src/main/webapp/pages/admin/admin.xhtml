@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Új épület típús felvétele</h1>
+        <h:form id="user-form">  
+            <h:outputLabel for="buildingName">Épület név</h:outputLabel>  
+            <h:inputText id="buildingName" value="#{adminUtils.newBuilding.name}" required="true" requiredMessage="Username is required"/><br/>  
+
+            <h:outputLabel for="buildingDescription">Épület leírás</h:outputLabel>  
+            <h:inputText id="buildingDescription" value="#{adminUtils.newBuilding.description}" required="true" requiredMessage="Username is required"/><br/>  
+            
+            <h:commandButton id="submit-button" value="Submit" actionListener="#{adminUtils.addNewBuilding()}"/>  
+        </h:form>  
+        
+        <h1>Új nyersanyag felvétele</h1>
+    </h:body>
+</html>
+
