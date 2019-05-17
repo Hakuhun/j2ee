@@ -18,14 +18,10 @@
     </servlet-mapping>
     
     <servlet-mapping>
-      <servlet-name>NewHeroBean</servlet-name>
-      <url-pattern>*.xhtml</url-pattern>
-   </servlet-mapping>
-   
-   <servlet-mapping>
-       <servlet-name>AdminUtils</servlet-name>
-        <url-pattern>pages/admin/admin.xhtml</url-pattern>
-   </servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+
     
     <!--Defining security constraint for type of roles available-->
     <welcome-file-list>
