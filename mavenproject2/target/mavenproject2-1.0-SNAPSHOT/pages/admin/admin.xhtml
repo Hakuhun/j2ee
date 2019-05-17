@@ -19,6 +19,16 @@
         </h:form>  
         
         <h1>Új nyersanyag felvétele</h1>
+        <h:form id="userke-form">  
+            <h:outputLabel for="resourceName">Nyersanyag neve</h:outputLabel>  
+            <h:inputText id="resourceName" value="#{adminUtils.newResource.name}" required="true" requiredMessage="MineralName is required"/><br/>  
+
+            <h:outputLabel for="resourceDescription">Nyersanyag leírása</h:outputLabel>  
+            <h:inputText id="resourceDescription" value="#{adminUtils.newResource.description}" required="true" requiredMessage="MineralDescription is required"/><br/>  
+            
+            <h:commandButton id="submit-button" value="Submit" actionListener="#{adminUtils.addNewResource()}"/>  
+        </h:form>  
+        
     </h:body>
 </html>
 

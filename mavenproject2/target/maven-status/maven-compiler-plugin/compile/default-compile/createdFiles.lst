@@ -11,6 +11,7 @@ com\mycompany\mavenproject2\repository\EmpireRepository.class
 com\mycompany\mavenproject2\servlet\NewHeroBean.class
 com\mycompany\mavenproject2\servlet\HeroServlet.class
 com\mycompany\mavenproject2\repository\UserRepository.class
+com\mycompany\mavenproject2\servlet\UserUtils.class
 com\mycompany\mavenproject2\servlet\RegServlet.class
 com\mycompany\mavenproject2\service\MineralResourceService.class
 com\mycompany\mavenproject2\model\Empire.class

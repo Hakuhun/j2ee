@@ -15,6 +15,13 @@ public class EmpireService{
     @Inject
     private EmpireRepository eRepo;
     
+    
+    public void add(Empire empire) {
+        eRepo.add(empire);
+    }
+    
+ 
+    
     public boolean isBuildingExists(Empire emp, Building building){
         for (BuildUp b : emp.getBuildings()) {
             if (b.getBuilding().equals(building)) {

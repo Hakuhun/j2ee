@@ -11,9 +11,12 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-@Named(value = "adminUtils")
+@ManagedBean(name = "adminUtils")
 @Dependent
 public class AdminUtils {
     
@@ -38,6 +41,10 @@ public class AdminUtils {
     
     public void addNewBuilding(){
         bService.add(newBuilding);
+    }
+    
+    public void addNewResource(){
+        mrService.add(newResource);
     }
     
     public List<Building> getBuildings() {
